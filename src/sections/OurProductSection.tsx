@@ -11,7 +11,7 @@ function OurProductSection() {
         description="Flexible financing solutions for healthcare and fintech businesses."
       />
 
-      <div className="flex items-center gap-[20px] justify-center">
+      <div className="flex flex-col md:flex-row items-center gap-[20px] py-8 justify-center">
         <div className="bg-white inline-flex p-[14px] item-center  text-primary rounded-[89px] shadow-md">
           Loan Facility
         </div>
@@ -21,7 +21,12 @@ function OurProductSection() {
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-8">
         <div className="md:w-[50%]">
-          <p className={cn(mulishFont.className, "text-[48px] font-bold")}>
+          <p
+            className={cn(
+              mulishFont.className,
+              "text-[32px] md:text-[48px] font-bold"
+            )}
+          >
             Loan Facility
           </p>
           <p className="text-textPrimary py-2 max-w-[549px]">

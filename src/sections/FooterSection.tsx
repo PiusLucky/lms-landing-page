@@ -8,15 +8,15 @@ function FooterSection() {
     Products: [
       {
         name: "Loan Facility",
-        link: "/loan-facility",
+        link: "/landing-page/loan-facility",
       },
       {
         name: "Medical Equipment Financing",
-        link: "/medical-equipment-financing",
+        link: "/landing-page/medical-equipment-financing",
       },
       {
         name: "Loan Management Software",
-        link: "/loan-management-software",
+        link: "/landing-page/loan-management-software",
       },
     ],
     Company: [
@@ -52,7 +52,7 @@ function FooterSection() {
         <div>
           <img src="/images/logo_footer.png" />
         </div>
-        <p className="text-white md:text-center md:text-left text-[20px] py-[24px]">
+        <p className="text-white md:text-left text-[20px] py-[24px]">
           By providing tailored funding options and advanced loan management
           tools, we aim to enhance the quality of healthcare services,
           streamline financial operations, and drive growth across the industry.

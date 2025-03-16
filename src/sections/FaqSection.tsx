@@ -56,8 +56,12 @@ export default function FaqSection() {
         <Accordion type="single" collapsible>
           {data.map((item) => (
             <AccordionItem value={item.question}>
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionTrigger className="text-[24px]">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-[18px]">
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

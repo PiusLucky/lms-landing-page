@@ -24,19 +24,19 @@ function NavBar() {
   }[] = [
     {
       title: "Loan Facility",
-      href: "/loan-facility",
+      href: "/landing-page/loan-facility",
       description: "The latest industry news, updates and info.",
       iconUrl: "/images/book_icon.svg",
     },
     {
       title: "Medical Equipment",
-      href: "/medical-equipment",
+      href: "/landing-page/medical-equipment",
       description: "Learn how our customers are making big changes.",
       iconUrl: "/images/zap_icon.svg",
     },
     {
       title: "Loan management software",
-      href: "/docs/primitives/progress",
+      href: "/landing-page/loan-management-software",
       description: "Short courses to become a master of advanced features.",
       iconUrl: "/images/book_open_icon.svg",
     },
@@ -50,19 +50,23 @@ function NavBar() {
   return (
     <div className="md:sticky md:top-0   md:shadow-none z-20 ">
       {/* DESKTOP */}
-      <div className=" hidden lg:block animate-in fade-in zoom-in hero-section p-4">
+      <div className=" hidden lg:block hero-section p-4">
         <div className="flex justify-between mx-[41px] items-center">
-          <div>
-            <img src="/images/logo.png" alt="logo" />
-          </div>
+          <Link href="/">
+            <div>
+              <img src="/images/logo.png" alt="logo" />
+            </div>
+          </Link>
 
           <NavigationMenu>
             <NavigationMenuList>
-              <p
-                className={`hover:text-primary cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary mr-4`}
-              >
-                Home
-              </p>
+              <Link href="/">
+                <p
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary mr-4`}
+                >
+                  Home
+                </p>
+              </Link>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
                   <p
@@ -147,7 +151,7 @@ function NavBar() {
                         </p>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-white hover:bg-white">
-                        <ul className="grid w-[372px] gap-[20px] p-4 md:grid-cols-1">
+                        <ul className="grid w-[300px] gap-[20px] p-4 md:grid-cols-1">
                           {ourProducts.map((product) => (
                             <ListItem
                               key={product.title}
@@ -200,7 +204,7 @@ const ListItem = ({
     <Link href={href} className="hover:bg-gray-100 p-4 rounded-lg">
       <div className="flex gap-4">
         <div>
-          <img src={iconUrl} alt={title} />
+          <img src={iconUrl} alt={title} width={30} height={30} />
         </div>
         <div className="flex flex-col gap-2 -mt-1">
           <p className="text-[18px] font-medium text-textPrimary">{title}</p>
