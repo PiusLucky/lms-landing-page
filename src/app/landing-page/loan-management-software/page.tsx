@@ -21,7 +21,7 @@ export default function LoanManagementSoftwarePage() {
     <LandingPageLayout>
       <div className="">
         <LMSHeroSection />
-        <div className="px-4 md:px-[100px] py-[50px] md:py-[100px] flex flex-col gap-[100px]">
+        <div className="px-4 md:px-[100px] py-[50px] md:py-[100px] flex flex-col md:gap-[100px]">
           <motion.div
             initial="hidden"
             whileInView="visible"

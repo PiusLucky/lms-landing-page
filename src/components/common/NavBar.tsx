@@ -114,7 +114,7 @@ function NavBar() {
         <div className="flex justify-between mx-[10px]">
           <Link href="/">
             <div className="flex gap-[50px] text-[16px] items-center select-none">
-              <img src="/images/logo.png" alt="logo" className="w-[7rem]" />
+              <img src="/images/logo.png" alt="logo" className="" />
             </div>
           </Link>
           <div className="flex items-center gap-[40px]">

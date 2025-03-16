@@ -18,7 +18,7 @@ function MedicalEquipmentRepaymentPlanSection() {
     },
   ];
   return (
-    <div className="flex flex-col md:flex-row gap-8 justify-center items-center mt-5 md:mt-[50px]">
+    <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
       <div className="text-left md:w-[50%]">
         <div className="border border-primary rounded-[89px] p-[12px] text-primary inline-block">
           Repayment plan

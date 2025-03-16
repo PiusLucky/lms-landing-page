@@ -32,7 +32,7 @@ function MedicalEquipmentLoanFacilitySection() {
         <Header title="Our Loan facility" description="Why Choose MBPL?" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] py-[70px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
         {data.map((item) => (
           <FeatureCard key={item.title} {...item} />
         ))}

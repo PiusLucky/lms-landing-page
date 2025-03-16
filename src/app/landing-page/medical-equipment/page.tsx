@@ -9,7 +9,7 @@ export default function MedicalEquipmentPage() {
     <LandingPageLayout>
       <div className="">
         <MedicalEquipmentHeroSection />
-        <div className="px-4 md:px-[100px] py-[50px] md:py-[100px]">
+        <div className="px-4 md:px-[100px] py-[50px] md:py-[100px] flex flex-col gap-[100px]">
           <MedicalEquipmentLoanFacilitySection />
           <MedicalEquipmentRepaymentPlanSection />
           <MedicalEquipmentHowItWorksSection />
