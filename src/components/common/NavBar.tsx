@@ -1,10 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { X } from "lucide-react";
 import Link from "next/link";
+import MainButton from "./MainButton";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 function NavBar() {
+  const ourProducts: {
+    title: string;
+    href: string;
+    description: string;
+    iconUrl: string;
+  }[] = [
+    {
+      title: "Loan Facility",
+      href: "/loan-facility",
+      description: "The latest industry news, updates and info.",
+      iconUrl: "/images/book_icon.svg",
+    },
+    {
+      title: "Medical Equipment",
+      href: "/medical-equipment",
+      description: "Learn how our customers are making big changes.",
+      iconUrl: "/images/zap_icon.svg",
+    },
+    {
+      title: "Loan management software",
+      href: "/docs/primitives/progress",
+      description: "Short courses to become a master of advanced features.",
+      iconUrl: "/images/book_open_icon.svg",
+    },
+  ];
+
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
     setMenu(!menu);
@@ -13,26 +50,54 @@ function NavBar() {
   return (
     <div className="md:sticky md:top-0   md:shadow-none z-20 ">
       {/* DESKTOP */}
-      <div className=" hidden lg:block animate-in fade-in zoom-in bg-white p-4">
+      <div className=" hidden lg:block animate-in fade-in zoom-in hero-section p-4">
         <div className="flex justify-between mx-[41px] items-center">
           <div>
-            <img src="/svgs/sf_logo.svg" alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
           </div>
-          <div className="flex gap-[20px] xl:gap-[50px] text-[16px] items-center select-none">
-            <p
-              className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
-            >
-              Link1
-            </p>
-            {/* Add more links here */}
-          </div>
+
+          <NavigationMenu>
+            <NavigationMenuList>
+              <p
+                className={`hover:text-primary cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary mr-4`}
+              >
+                Home
+              </p>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>
+                  <p
+                    className={`hover:text-primary cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary`}
+                  >
+                    Our Products
+                  </p>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[372px] gap-[20px] p-4 md:grid-cols-1">
+                    {ourProducts.map((product) => (
+                      <ListItem
+                        key={product.title}
+                        title={product.title}
+                        href={product.href}
+                        description={product.description}
+                        iconUrl={product.iconUrl}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <div className="flex items-center gap-[40px] select-none">
             <Link
               href="/auth/login"
-              className="hover:text-primary cursor-pointer flex items-center gap-2 "
+              className="hover:text-primary cursor-pointer flex text-[18px] font-medium items-center gap-2 text-textPrimary"
             >
-              Sign in
+              Login
             </Link>
+
+            <div>
+              <MainButton text="Get Started - It's free" width="221px" />
+            </div>
           </div>
         </div>
       </div>
@@ -44,7 +109,7 @@ function NavBar() {
       >
         <div className="flex justify-between mx-[10px]">
           <div className="flex gap-[50px] text-[16px] items-center select-none">
-            <img src="/svgs/sf_logo.svg" alt="logo" className="w-[7rem]" />
+            <img src="/images/logo.png" alt="logo" className="w-[7rem]" />
           </div>
           <div className="flex items-center gap-[40px]">
             {menu ? (
@@ -54,7 +119,7 @@ function NavBar() {
               />
             ) : (
               <img
-                src="/svgs/hamburger.svg"
+                src="/images/hamburger.svg"
                 alt="logo"
                 className="cursor-pointer animate-in fade-in zoom-in"
                 onClick={toggleMenu}
@@ -65,15 +130,50 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              <p className="text-black cursor-pointer">
-                <span>How it works</span>
-              </p>
-              {/* Add more links here */}
-
-              <div className="flex flex-col gap-[40px] select-none">
-                <Link href="/auth/login" className="text-black cursor-pointer">
-                  Signin
+              <NavigationMenu>
+                <NavigationMenuList className="flex flex-col gap-4 items-start">
+                  <p
+                    className={`hover:text-primary cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary mr-4`}
+                  >
+                    Home
+                  </p>
+                  <div>
+                    <NavigationMenuItem className=" hover:bg-white">
+                      <NavigationMenuTrigger>
+                        <p
+                          className={`hover:text-primary  cursor-pointer flex items-center gap-2 text-[18px]  font-medium text-textPrimary`}
+                        >
+                          Our Products
+                        </p>
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="bg-white hover:bg-white">
+                        <ul className="grid w-[372px] gap-[20px] p-4 md:grid-cols-1">
+                          {ourProducts.map((product) => (
+                            <ListItem
+                              key={product.title}
+                              title={product.title}
+                              href={product.href}
+                              description={product.description}
+                              iconUrl={product.iconUrl}
+                            />
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </div>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <div className="flex gap-4 flex-col items-start select-none">
+                <Link
+                  href="/auth/login"
+                  className="hover:text-primary cursor-pointer flex text-[18px] font-medium items-center gap-2 text-textPrimary"
+                >
+                  Login
                 </Link>
+
+                <div>
+                  <MainButton text="Get Started - It's free" width="221px" />
+                </div>
               </div>
             </div>
           </div>
@@ -84,5 +184,31 @@ function NavBar() {
     </div>
   );
 }
+
+const ListItem = ({
+  title,
+  description,
+  iconUrl,
+  href,
+}: {
+  title: string;
+  description: string;
+  iconUrl: string;
+  href: string;
+}) => {
+  return (
+    <Link href={href} className="hover:bg-gray-100 p-4 rounded-lg">
+      <div className="flex gap-4">
+        <div>
+          <img src={iconUrl} alt={title} />
+        </div>
+        <div className="flex flex-col gap-2 -mt-1">
+          <p className="text-[18px] font-medium text-textPrimary">{title}</p>
+          <p className="text-[14px] text-[#475467]">{description}</p>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
 export default NavBar;
