@@ -19,7 +19,7 @@ function BenefitCard({
         alt={title}
         className="w-full object-cover h-[505px] rounded-[20px]"
       />
-      <div className="absolute top-0 right-0  bg-white/10 rounded-[30.2px]">
+      <div className="absolute top-0 left-0  bg-white/10 rounded-[30.2px] p-[44px]">
         <p className="text-white opacity-10 text-[64px] font-bold">{number}</p>
       </div>
 
