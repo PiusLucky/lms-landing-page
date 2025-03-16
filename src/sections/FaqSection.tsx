@@ -11,26 +11,31 @@ import { cn, mulishFont } from "@/lib/utils";
 export default function FaqSection() {
   const data = [
     {
+      id: 1,
       question: "How do Loan Work?",
       answer:
         "This website is a platform for users to ask and answer questions.",
     },
     {
+      id: 2,
       question: "How long does it take to apply for a loan?",
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
+      id: 3,
       question: "How long does it take to get a loan?",
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
+      id: 4,
       question: "How much can I borrow?",
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
+      id: 5,
       question: "How long an I borrow the money for?",
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
@@ -55,7 +60,7 @@ export default function FaqSection() {
       <div className="w-full md:w-[50%]">
         <Accordion type="single" collapsible>
           {data.map((item) => (
-            <AccordionItem value={item.question}>
+            <AccordionItem value={item.question} key={item.id}>
               <AccordionTrigger className="text-[24px]">
                 {item.question}
               </AccordionTrigger>

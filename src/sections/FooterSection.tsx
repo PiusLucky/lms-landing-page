@@ -79,8 +79,8 @@ function FooterSection() {
           </div>
         </div>
       </div>
-      {Object.keys(footerLinks).map((key) => (
-        <div>
+      {Object.keys(footerLinks).map((key, index) => (
+        <div key={index}>
           <p
             className={cn(
               mulishFont.className,
@@ -92,6 +92,7 @@ function FooterSection() {
           <div className="flex flex-col gap-2">
             {footerLinks[key as keyof typeof footerLinks].map((item) => (
               <Link
+                key={item.link}
                 href={item.link}
                 className={cn(
                   mulishFont.className,
