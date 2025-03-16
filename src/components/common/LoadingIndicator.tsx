@@ -46,7 +46,7 @@ const LoadingIndicator = ({ isLoading }: LoadingIndicatorProps) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Adjusted V */}
+            {/* V */}
             <motion.path
               d="M20 20L40 60L60 20"
               stroke="#0076FF"
