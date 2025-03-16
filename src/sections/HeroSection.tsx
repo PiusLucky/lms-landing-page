@@ -76,7 +76,7 @@ function HeroSection() {
         <p
           className={cn(
             mulishFont.className,
-            "text-[45px] md:text-[65px] text-center leading-[55px] md:leading-[70px] font-[800]"
+            "text-[35px] md:text-[65px] text-center leading-[45px] md:leading-[70px] font-[800] mt-32"
           )}
         >
           Empowering Healthcare with Tailored{" "}

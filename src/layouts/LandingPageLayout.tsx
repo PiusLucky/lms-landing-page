@@ -51,7 +51,9 @@ function LandingPageLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="overflow-hidden">
-      <LoadingIndicator isLoading={isLoading} />
+      <div className="!flex !justify-center !items-center">
+        <LoadingIndicator isLoading={isLoading} />
+      </div>
 
       <NavBar />
 

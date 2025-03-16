@@ -53,7 +53,7 @@ const HowItWorksCard = ({
 }) => {
   return (
     <div className="flex gap-4">
-      <div className="bg-primary text-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
+      <div className="hidden md:flex bg-primary text-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
         {number}
       </div>
       <div>
