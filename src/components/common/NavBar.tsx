@@ -8,12 +8,9 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 function NavBar() {
   const ourProducts: {
@@ -54,7 +51,7 @@ function NavBar() {
         <div className="flex justify-between mx-[41px] items-center">
           <Link href="/">
             <div>
-              <img src="/images/logo.png" alt="logo" />
+              <img src="/images/logo.svg" alt="logo" />
             </div>
           </Link>
 
@@ -114,7 +111,7 @@ function NavBar() {
         <div className="flex justify-between mx-[10px]">
           <Link href="/">
             <div className="flex gap-[50px] text-[16px] items-center select-none">
-              <img src="/images/logo.png" alt="logo" className="" />
+              <img src="/images/logo.svg" alt="logo" className="" />
             </div>
           </Link>
           <div className="flex items-center gap-[40px]">
