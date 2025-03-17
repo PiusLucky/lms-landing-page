@@ -1,5 +1,4 @@
 import BenefitCard from "@/cards/BenefitCard";
-import FeatureCard from "@/cards/FeatureCard";
 import Header from "@/components/common/Header";
 import React from "react";
 
